@@ -9,7 +9,6 @@ use Matth\TwigBlog\Model\Entity\Articles;
 
 class ArticlesManager {
 
-
     /**
      * Return an array of all the articles
      * @return array
@@ -52,7 +51,7 @@ class ArticlesManager {
         $request->bindParam(":content", $content);
 
         $request->execute();
-        header("Location: /");
+        header("Location: /?controller=articles");
     }
 
     public function modifyArticle(Articles $article): void {
@@ -71,7 +70,7 @@ class ArticlesManager {
         $request->bindParam(":id", $id);
 
         $request->execute();
-        header("Location: /");
+        header("Location: /?controller=articles");
     }
 
     public function deleteArticle(Articles $article){
@@ -79,7 +78,7 @@ class ArticlesManager {
         $id = $article->getId();
         $request->bindParam(':id', $id);
         $request->execute();
-        header("Location: /");
+        header("Location: /?controller=articles");
     }
 
     public function addAuthor(Articles $article){
@@ -95,7 +94,7 @@ class ArticlesManager {
         $request->bindParam(':id', $id);
 
         $request->execute();
-        header("Location: /");
+        header("Location: /?controller=articles");
     }
 
     public function getAuthor(): array {
