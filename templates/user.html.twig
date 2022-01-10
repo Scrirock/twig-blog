@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block itemContainer %}
+
+    <a href="/?controller=user&action=addUser&id" class="waves-effect waves-light btn">Ajouter un utilisateur</a>
+
+    <table class="highlight">
+        <thead>
+        <tr>
+            <th>Pseudo</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.pseudo }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="/?controller=user&action=edit&id={{ user.id }}">
+                        <i class="medium material-icons edit">create</i>
+                    </a>
+                    <a href="/?controller=user&action=delete&id={{ user.id }}">
+                        <i class="medium material-icons delete">delete</i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if action is not null and action != 'delete' %}
+        <div class="articleForm">
+            <h3>Formulaire</h3>
+            <div class="row">
+                <form class="col s12" action="" method="POST">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="pseudo" name="pseudo" type="text" class="validate"
+                                   value="{% if user is not null %}{{ user.pseudo }}{% endif %}">
+                            <label for="pseudo">Pseudo</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="password" name="password" type="text" class="validate">
+                            <label for="password">Nouveau mot de passe</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="email" name="email" type="text" class="validate"
+                                   value="{% if user is not null %}{{ user.email }}{% endif %}">
+                            <label for="email">Mail</label>
+                        </div>
+                    </div>
+
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/?controller=articles" class="waves-effect waves-light btn">Articles</a></li>
+                <li><a href="/?controller=user" class="waves-effect waves-light btn">Utilisateur</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="pageTitle">
+        <h1>{{ pageTitle }} <span>{{ nbrItems }}</span></h1>
+    </div>
+    <div id="itemContainer">
+        {% block itemContainer %}{% endblock %}
+    </div>
+
+<script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="./assets/js/app.js"></script>
+</body>
+</html>

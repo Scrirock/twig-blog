@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 2rem 15rem;
+    font-weight: bold;
+}
+
+h1 span {
+    color: #828282;
+    font-style: italic;
+}
+
+nav {
+    padding: 0 2rem;
+}
+
+.divContent {
+    margin: 2rem;
+    height: 5.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+    text-shadow: 2px 4px 1px #a0a0a0;
+    transition-duration: .3s;
+}
+
+.delete {
+    color: #b73440;
+}
+
+.edit, .addAuthor {
+    color: #2bbbad;
+}
+
+.articleForm {
+    position: absolute;
+    top: 8rem;
+    left: calc(50% - 35%);
+    width: 70%;
+    background-color: #d6d6d6;
+    padding: 4rem;
+    -webkit-box-shadow: 5px 5px 15px 5px #626262;
+    box-shadow: 5px 5px 15px 5px #626262;
+}
+
+textarea {
+    max-height: 20rem;
+}
+
+.articleForm h3 {
+    text-align: center;
+}
+
+.articleForm label {
+    font-size: 2rem;
+}
+
+.articleForm input {
+    position: relative;
+    top: 1.2rem;
+}
+
+span.author {
+    font-size: 1.8rem;
+    color: #7a7a7a;
+    font-style: italic;
+}
+
+#itemContainer {
+    margin: 3rem;
+}
